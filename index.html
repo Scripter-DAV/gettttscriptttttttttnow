@@ -3,59 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lấy Tài Khoản Liên Quân</title>
+    <title>Chia sẻ Script Roblox</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #1e90ff, #00c9ff);
-            color: #fff;
-            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
         .container {
-            max-width: 500px;
-            margin: 100px auto;
-            background: rgba(0, 0, 0, 0.7);
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-        h1 {
-            font-size: 28px;
-            margin-bottom: 10px;
-            color: #ffd700;
-        }
-        p {
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
-        button {
-            padding: 15px 30px;
-            font-size: 18px;
-            color: #fff;
-            background: linear-gradient(135deg, #ff4d4d, #ff0000);
-            border: none;
+            background: #fff;
+            padding: 20px;
             border-radius: 10px;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
         }
-        button:hover {
-            transform: scale(1.1);
-            background: linear-gradient(135deg, #ff0000, #ff4d4d);
+        .title {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #0078D7;
+        }
+        .script-box {
+            background: #f8f8f8;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 14px;
+            color: #555;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            margin-bottom: 15px;
+        }
+        .copy-btn {
+            background: #0078D7;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .copy-btn:hover {
+            background: #005bb5;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #777;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Hệ Thống Lấy Tài Khoản Liên Quân</h1>
-        <p>Nhấn vào nút bên dưới để lấy thông tin tài khoản.</p>
-        <button onclick="redirect()">Lấy Tài Khoản Ngay</button>
+        <div class="title">Script Roblox</div>
+        <div class="script-box" id="script-content">
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Scripter-DAV/Universal-aimbot/refs/heads/main/Script"))()
+        </div>
+        <button class="copy-btn" onclick="copyScript()">Copy Script</button>
+        <div class="footer">© 2025 - Share script by DAV</div>
     </div>
 
     <script>
-        function redirect() {
-            window.location.href = "tai_khoan.html";
+        function copyScript() {
+            const scriptContent = document.getElementById('script-content').innerText;
+            navigator.clipboard.writeText(scriptContent)
+                .then(() => {
+                    alert('Script đã được copy thành công!');
+                })
+                .catch(err => {
+                    alert('Đã xảy ra lỗi khi copy!');
+                    console.error(err);
+                });
         }
     </script>
 </body>
