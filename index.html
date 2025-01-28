@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lấy Tài Khoản Liên Quân</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1e90ff, #00c9ff);
+            color: #fff;
+            text-align: center;
+        }
+        .container {
+            max-width: 500px;
+            margin: 100px auto;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #ffd700;
+        }
+        p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            color: #fff;
+            background: linear-gradient(135deg, #ff4d4d, #ff0000);
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        button:hover {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, #ff0000, #ff4d4d);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hệ Thống Lấy Tài Khoản Liên Quân</h1>
+        <p>Nhấn vào nút bên dưới để lấy thông tin tài khoản.</p>
+        <button onclick="redirect()">Lấy Tài Khoản Ngay</button>
+    </div>
+
+    <script>
+        function redirect() {
+            window.location.href = "tai_khoan.html";
+        }
+    </script>
+</body>
+</html>
